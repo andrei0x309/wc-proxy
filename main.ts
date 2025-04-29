@@ -6,9 +6,8 @@ const app = new Hono();
 const URL_TO_PROXY = "https://client.warpcast.com"
 
 app.use('/*', cors({
-  origin: (origin: string) => (origin.toLocaleLowerCase().includes('://localhost') || 
-  origin.toLocaleLowerCase().includes('://fc-app.pages') ) ||
-  origin.toLocaleLowerCase().includes('://tun-')
+  origin: (origin: string) =>
+  origin.toLocaleLowerCase().includes('://tun-5173.flashsoft.eu')
   ? origin : '',
   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
